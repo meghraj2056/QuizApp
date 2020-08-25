@@ -67,7 +67,7 @@ body {
 
 .answer {
   font-size: 1.2rem;
-  width: 250px;
+  width: 180px;
 }
 .btn1,
 .btn2 {
@@ -81,6 +81,24 @@ body {
 .btn1:hover,
 .btn2:hover {
   background-color: #f00000;
+}
+
+.btn3 {
+  width: fit-content;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.end-container {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+}
+
+.score {
+  width: 100%;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
 }
 
 @media screen and (max-width: 768px) {

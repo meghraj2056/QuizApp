@@ -52,23 +52,39 @@ function showQuestion(index) {
     `;
     question.innerHTML = html;
   } else {
-    question.innerHTML = `score ${score}`;
+    question.innerHTML = `<div class="end-container">
+                              <div class="score"> Score ${score} %</div>
+                              <div class="btn btn3" id="btn3">Play again</div> 
+                          </div>
+                          `;
     nextBtn.style.display = "none";
   }
 }
 
 question.addEventListener("click", (e) => {
   if (e.target.className === "answer btn") {
-    const options = document.querySelector(".answers");
-
     nextBtn.style.display = "block";
-    options.style.cursor = "default";
+    document.getElementById("true").style.backgroundColor = "green";
+    document.querySelectorAll("#false").forEach((element) => {
+      element.style.backgroundColor = "red";
+    });
   }
   if (e.target.id === "true") {
     score += 10;
     body.style.backgroundColor = "green";
-  } else {
+  } else if (e.target.id === "false") {
     body.style.backgroundColor = "red";
+  }
+});
+
+question.addEventListener("click", (e) => {
+  if (e.target.id === "btn3") {
+    const endContainer = document.querySelector(".end-container");
+    endContainer.style.display = "none";
+    startbtn.style.display = "block";
+    header.style.display = "flex";
+    counter = 1;
+    score = 0;
   }
 });
 
@@ -92,21 +108,75 @@ const questionArray = [
     ],
   },
   {
-    ques: "what is your job?",
+    ques: "Which is the coldest planet?",
     answer: [
-      { a: "meghraj", correct: true },
-      { b: "ram", correct: false },
-      { c: "ram", correct: false },
-      { d: "ram", correct: false },
+      { a: "Earth", correct: false },
+      { b: "Neptune", correct: true },
+      { c: "Saturn", correct: false },
+      { d: "Venus", correct: false },
     ],
   },
   {
-    ques: "what is your salary?",
+    ques: "Which planet is known as red planet?",
     answer: [
-      { a: "meghraj", correct: true },
-      { b: "ram", correct: false },
-      { c: "ram", correct: false },
-      { d: "ram", correct: false },
+      { a: "Earth", correct: false },
+      { b: "Mars", correct: true },
+      { c: "Jupiter", correct: false },
+      { d: "Venus", correct: false },
+    ],
+  },
+  {
+    ques: "Which planet is nearest to the sun?",
+    answer: [
+      { a: "Mercury", correct: true },
+      { b: "Mars", correct: false },
+      { c: "Neptune", correct: false },
+      { d: "Venus", correct: false },
+    ],
+  },
+  {
+    ques: "How long does the earth takes to complete one rotation?",
+    answer: [
+      { a: "29 days", correct: false },
+      { b: "365 days", correct: false },
+      { c: "36 hours", correct: false },
+      { d: "24 hours", correct: true },
+    ],
+  },
+  {
+    ques: "Which planet takes the longest time to revolve around the sun?",
+    answer: [
+      { a: "Earth", correct: false },
+      { b: "Neptune", correct: true },
+      { c: "Jupiter", correct: false },
+      { d: "uranus", correct: false },
+    ],
+  },
+  {
+    ques: "Which planet has the highest number of sattelites?",
+    answer: [
+      { a: "Earth", correct: false },
+      { b: "Saturn", correct: true },
+      { c: "Jupiter", correct: false },
+      { d: "Venus", correct: false },
+    ],
+  },
+  {
+    ques: "Which planet is known as ring planet?",
+    answer: [
+      { a: "Uranus", correct: false },
+      { b: "Mars", correct: false },
+      { c: "Saturn", correct: true },
+      { d: "Neptune", correct: false },
+    ],
+  },
+  {
+    ques: "Which planet is known as home Planet?",
+    answer: [
+      { a: "Earth", correct: true },
+      { b: "Mars", correct: false },
+      { c: "neptune", correct: false },
+      { d: "Venus", correct: false },
     ],
   },
 ];
