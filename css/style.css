@@ -67,6 +67,7 @@ body {
 
 .answer {
   font-size: 1.2rem;
+  width: 250px;
 }
 .btn1,
 .btn2 {
