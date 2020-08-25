@@ -23,6 +23,7 @@ function nextQuestion() {
   counter++;
   nextBtn.style.display = "none";
   body.style.backgroundColor = "white";
+  question.style.pointerEvents = "visible";
 }
 
 function showQuestion(index) {
@@ -65,6 +66,7 @@ question.addEventListener("click", (e) => {
   if (e.target.className === "answer btn") {
     nextBtn.style.display = "block";
     document.getElementById("true").style.backgroundColor = "green";
+    question.style.pointerEvents = "none";
     document.querySelectorAll("#false").forEach((element) => {
       element.style.backgroundColor = "red";
     });
