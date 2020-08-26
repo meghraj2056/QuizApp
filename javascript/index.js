@@ -55,9 +55,8 @@ function showQuestion(index) {
   } else {
     question.innerHTML = `<div class="end-container">
                               <div class="score"> Score ${score} %</div>
-                              <div class="btn btn3" id="btn3">Play again</div> 
-                          </div>
-                          `;
+                              <div class="btn btn3" id="btn3"> Home</div> 
+                          </div>`;
     nextBtn.style.display = "none";
   }
 }
